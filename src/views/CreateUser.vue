@@ -1,10 +1,12 @@
 <template>
   <div>
-    <form id="registration-form" @submit.prevent="sendDataToBackend">
+    <h1>Create new account and Join us!</h1>
+    <form class="registration-form" @submit.prevent="createUserAndPost">
       <label for="username">
         Username:
       </label>
       <input v-model="username" id="username" type="text" name="username">
+
       <label for="userPassword">
         Password:
       </label>
@@ -17,12 +19,16 @@
 
       <button type="submit">Submit</button>
     </form>
+
     <p>{{ createUserResponse }}</p>
   </div>
+
 </template>
 
 <script>
+
 export default {
+
   data() {
     return {
       username: '',
@@ -33,7 +39,7 @@ export default {
     }
   },
   methods: {
-    sendDataToBackend() {
+    createUserAndPost() {
       const jsonData = {'username': this.username, 'password': this.userPassword, 'email': this.userEmail}
       let options = {
         method: 'POST',
@@ -53,6 +59,28 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
+.registration-form {
+  display: inline-grid;
+  font-size: 27px;
+  flex-direction: column;
+
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5em;
+  height: 2em;
+  margin: 0.5em;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #1c7ac9 0%, #71b5f1 100%);
+  background-size: 100%;
+  font-size: 20px;
+  color: white;
+  border: none;
+  outline: none;
+}
 </style>
