@@ -5,17 +5,17 @@
       <label for="username">
         Username:
       </label>
-      <input v-model="username" id="username" type="text" name="username">
+      <input v-model="username" id="username" type="text" name="username" required>
 
       <label for="userPassword">
         Password:
       </label>
-      <input v-model="userPassword" id="userPassword" type="text" name="userPassword">
+      <input v-model="userPassword" id="userPassword" type="password" name="userPassword" required>
 
       <label for="userEmail">
         Email:
       </label>
-      <input v-model="userEmail" id="userEmail" type="text" name="userEmil">
+      <input v-model="userEmail" id="userEmail" type="email" name="userEmil" required>
 
       <button type="submit">Submit</button>
     </form>

@@ -5,12 +5,12 @@
     <label for="username">
       Username:
     </label>
-    <input v-model="username" id="username" type="text" name="username">
+    <input v-model="username" id="username" type="text" name="username" required>
     <label for="userPassword">
       Password:
     </label>
 
-    <input v-model="userPassword" id="userPassword" type="text" name="userPassword">
+    <input v-model="userPassword" id="userPassword" type="password" name="userPassword" required>
     <button class="loginbutton" type="submit">Log in</button>
   </form>
 
