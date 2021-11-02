@@ -5,6 +5,7 @@ import CreateUser from "@/views/CreateUser";
 import Login from "@/views/Login";
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path: '/',

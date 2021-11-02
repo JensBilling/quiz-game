@@ -25,6 +25,7 @@
 
 <script>
 export default {
+
   data() {
 
     return {
@@ -64,6 +65,7 @@ export default {
               localStorage.setItem('userId', this.userId);
               localStorage.setItem('username', this.username)
               localStorage.setItem('userScore', this.userScore)
+              location.reload();
 
             }
 
@@ -78,9 +80,9 @@ export default {
       localStorage.setItem('userId', 0)
       localStorage.setItem('username', "")
       localStorage.setItem('userScore', 0)
+      location.reload();
     }
   }
-
 }
 </script>
 
