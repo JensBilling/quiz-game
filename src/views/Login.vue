@@ -1,39 +1,43 @@
 <template>
-<div>
+  <div>
+    <div v-if="userId == 0">
+      <form class="login-form" @submit.prevent="loginUser">
+        <label for="username">
+          Username:
+        </label>
+        <input v-model="username" id="username" type="text" name="username" required>
+        <label for="userPassword">
+          Password:
+        </label>
 
-  <form class="login-form" @submit.prevent="loginUser">
-    <label for="username">
-      Username:
-    </label>
-    <input v-model="username" id="username" type="text" name="username" required>
-    <label for="userPassword">
-      Password:
-    </label>
+        <input v-model="userPassword" id="userPassword" type="password" name="userPassword" required>
+        <button class="loginbutton" type="submit">Log in</button>
+      </form>
+      <p>{{ loginUserResponse }}</p>
+    </div>
 
-    <input v-model="userPassword" id="userPassword" type="password" name="userPassword" required>
-    <button class="loginbutton" type="submit">Log in</button>
-  </form>
-
-  <p>{{loginUserResponse}}</p>
-</div>
+    <div v-else>
+      <p>Welcome {{username}}! Your total score is: {{userScore}}</p>
+      <button v-on:click="logOutButton" class="logoutbutton" type="submit">Log out</button>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-
   data() {
-    return {
-      userId:0,
-      username: '',
-      userPassword: '',
-      userScore:0,
-      loginUserResponse: ''
 
+    return {
+      userId: localStorage.getItem('userId'),
+      username: localStorage.getItem('username'),
+      userPassword: localStorage.getItem('userPassword'),
+      userScore: 0,
+      loginUserResponse: ''
     }
   },
-  methods: {
 
-    loginUser(){
+  methods: {
+    loginUser() {
       const jsonData = {'username': this.username, 'password': this.userPassword}
       let options = {
         method: 'POST',
@@ -46,26 +50,38 @@ export default {
       fetch('http://127.0.0.1:3000/login', options)
           .then(response => response.json())
           .then(data => {
-            if(data.userInfo === "userNotFound") {
+            if (data.userInfo === "userNotFound") {
               this.loginUserResponse = "Wrong user input"
-            }else {
+            } else {
               this.userId = data.userInfo.id
-              this.username= data.userInfo.user_name
+              this.username = data.userInfo.user_name
               this.userScore = data.userInfo.user_score
 
+              this.username = this.username.substr(0,1).toUpperCase() + this.username.substr(1)
 
-              this.loginUserResponse = this.userId + " "
-                  + this.username + ", score: " + this.userScore
+              this.loginUserResponse = "Welcome " + this.username + "! Your total score is: " + this.userScore
+
+              localStorage.setItem('userId', this.userId);
+              localStorage.setItem('username', this.username)
+              localStorage.setItem('userScore', this.userScore)
 
             }
 
           })
+    },
+    logOutButton(){
+      this.userId = 0
+      this.username = ''
+      this.userPassword = ''
+      this.userScore = 0
+      this.loginUserResponse = ""
+      localStorage.setItem('userId', 0)
+      localStorage.setItem('username', "")
+      localStorage.setItem('userScore', 0)
     }
   }
 
-    }
-
-
+}
 </script>
 
 <style>
@@ -76,8 +92,8 @@ export default {
 
 }
 
-p{
-  font-size: 10px;
+p {
+  font-size: 20px;
 }
 
 button {
@@ -90,10 +106,4 @@ button {
   outline: none;
   cursor: pointer;
 }
-button:hover {
-
-}
-
-
-
 </style>

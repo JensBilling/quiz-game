@@ -5,7 +5,7 @@
 
     <Login></Login>
 
- <!--   <img alt="Vue logo" src="../assets/logo-quiz-movie.png"> -->
+    <!--   <img alt="Vue logo" src="../assets/logo-quiz-movie.png"> -->
   </div>
 </template>
 
@@ -17,17 +17,14 @@ export default {
   Login
 }
 
+if (!localStorage.getItem('userId') > 0) {
+  localStorage.setItem("userId", 0)
+}
 
 </script>
 
 
 <style>
-
-
-
-
-
-
 
 
 </style>
