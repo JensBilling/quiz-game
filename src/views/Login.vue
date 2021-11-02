@@ -31,7 +31,7 @@ export default {
       userId: localStorage.getItem('userId'),
       username: localStorage.getItem('username'),
       userPassword: localStorage.getItem('userPassword'),
-      userScore: 0,
+      userScore: localStorage.getItem('userScore'),
       loginUserResponse: ''
     }
   },
