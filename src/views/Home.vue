@@ -1,9 +1,10 @@
 <template>
   <div class="home">
 
-    <h1>Quiz-Game</h1>
+
 
     <Login></Login>
+    <QuizGame v-if="userId > 0"></QuizGame>
 
     <!--   <img alt="Vue logo" src="../assets/logo-quiz-movie.png"> -->
   </div>
@@ -11,10 +12,16 @@
 
 <script>
 import Login from "@/views/Login";
+import QuizGame from "../components/QuizGame";
 
 export default {
-  components: {Login},
-  Login
+  components: {QuizGame, Login},
+  Login,
+  data() {
+    return {
+      userId: localStorage.getItem('userId')
+    }
+  }
 }
 
 if (!localStorage.getItem('userId') > 0) {

@@ -21,9 +21,7 @@ export default {
 body {
   background-color: #bef3ff;
   background-image: linear-gradient(to right, #5e99c7 0%, #90bbea 100%);
-  /*background-image: url("./assets/curtains.jpg");
-
-   */
+  /background-image: url("./assets/curtains.jpg");
   margin: 20px;
   font-family: 'monospace', Merriweather;
 }

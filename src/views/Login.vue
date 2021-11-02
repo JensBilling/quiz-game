@@ -17,7 +17,7 @@
     </div>
 
     <div v-else>
-      <p>Welcome {{username}}! Your total score is: {{userScore}}</p>
+      <p>Welcome {{ username }}! Your total score is: {{ userScore }}</p>
       <button v-on:click="logOutButton" class="logoutbutton" type="submit">Log out</button>
     </div>
   </div>
@@ -58,7 +58,7 @@ export default {
               this.username = data.userInfo.user_name
               this.userScore = data.userInfo.user_score
 
-              this.username = this.username.substr(0,1).toUpperCase() + this.username.substr(1)
+              this.username = this.username.substr(0, 1).toUpperCase() + this.username.substr(1)
 
               this.loginUserResponse = "Welcome " + this.username + "! Your total score is: " + this.userScore
 
@@ -71,7 +71,7 @@ export default {
 
           })
     },
-    logOutButton(){
+    logOutButton() {
       this.userId = 0
       this.username = ''
       this.userPassword = ''
@@ -91,7 +91,6 @@ export default {
   display: inline-grid;
   font-size: 27px;
   flex-direction: column;
-
 }
 
 p {
