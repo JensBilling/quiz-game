@@ -14,16 +14,16 @@ export default {
   name: "QuizGame",
 
   methods: {
-    startQuizOne(){
-this.fetchMethod(1)
+    startQuizOne() {
+      this.fetchMethod(1)
     },
-    startQuizTwo(){
+    startQuizTwo() {
       this.fetchMethod(2)
 
     },
 
-    fetchMethod(quizId){
-      const jsonData = {'quizId':quizId}
+    fetchMethod(quizId) {
+      const jsonData = {'quizId': quizId}
       let options = {
         method: 'POST',
         mode: 'cors',
@@ -33,12 +33,15 @@ this.fetchMethod(1)
         body: JSON.stringify(jsonData)
       }
 
-      fetch('http://127.0.0.1:3000/startgame',options)
+      fetch('http://127.0.0.1:3000/startgame', options)
           .then(response => response.json())
           .then(data => {
 
-            console.log(data.quizdata)
-
+            localStorage.setItem('question1', JSON.stringify(data.quizdata[0]))
+            localStorage.setItem('question2', JSON.stringify(data.quizdata[1]))
+            localStorage.setItem('question3', JSON.stringify(data.quizdata[2]))
+            localStorage.setItem('question4', JSON.stringify(data.quizdata[3]))
+            localStorage.setItem('question5', JSON.stringify(data.quizdata[4]))
 
           })
 
