@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-
-
-
     <Login></Login>
     <QuizGame v-if="userId > 0"></QuizGame>
 

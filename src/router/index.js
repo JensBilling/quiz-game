@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import CreateUser from "@/views/CreateUser";
 import Login from "@/views/Login";
+import QuizCard from "@/components/QuizCard";
+
 Vue.use(VueRouter)
 
 
@@ -25,6 +27,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/startgame',
+    name: 'startgame',
+    component: QuizCard
   }
 ]
 
