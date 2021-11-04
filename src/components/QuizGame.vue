@@ -36,9 +36,13 @@ this.fetchMethod(1)
       fetch('http://127.0.0.1:3000/startgame',options)
           .then(response => response.json())
           .then(data => {
+
             console.log(data.quizdata)
+
+
           })
 
+      this.$router.push('/startgame')
 
     }
   }
