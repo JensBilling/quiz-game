@@ -32,7 +32,8 @@ const routes = [
     path: '/startgame',
     name: 'startgame',
     component: QuizCard
-  }
+  },
+
 ]
 
 const router = new VueRouter({
