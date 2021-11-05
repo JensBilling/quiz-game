@@ -55,6 +55,7 @@ export default {
       this.checkAnswer(4)
     },
     checkAnswer(userAnswer) {
+
       this.correctAnswer = this.question.correct_answer
       if (userAnswer == this.correctAnswer){
         this.userPoints++
@@ -63,6 +64,7 @@ export default {
       this.currentQuestion++
       this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
     }
+
 
   }
 

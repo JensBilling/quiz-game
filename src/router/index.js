@@ -32,6 +32,7 @@ const routes = [
     path: '/startgame',
     name: 'startgame',
     component: QuizCard
+
   },
 
 ]

@@ -2,7 +2,7 @@
   <div>
     <h1>Select a quiz:</h1>
     <div id="quizContainer">
-      <button  class="button1" v-on:click ="startQuizOne">Who's that actor?</button>
+      <button  class="button1"  v-on:click ="startQuizOne">Who's that actor?</button>
       <button class="button2" v-on:click="startQuizTwo">WHAT MOVIE?!</button>
     </div>
   </div>
@@ -17,6 +17,7 @@ export default {
   methods: {
     startQuizOne() {
       this.fetchMethod(1)
+
     },
     startQuizTwo() {
       this.fetchMethod(2)
@@ -44,10 +45,11 @@ export default {
             localStorage.setItem('question4', JSON.stringify(data.quizdata[3]))
             localStorage.setItem('question5', JSON.stringify(data.quizdata[4]))
 
+
           })
 
       this.$router.push('/startgame')
-      location.reload
+      location.reload()
 
     }
   }
