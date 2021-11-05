@@ -20,6 +20,7 @@
       {{ question.answer4 }}
     </button>
 
+    {{userPoints}}
   </div>
 
 </template>
@@ -54,6 +55,7 @@ export default {
       this.checkAnswer(4)
     },
     checkAnswer(userAnswer) {
+      this.correctAnswer = this.question.correct_answer
       if (userAnswer == this.correctAnswer){
         this.userPoints++
       }
