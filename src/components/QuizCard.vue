@@ -38,8 +38,6 @@ export default {
       correctAnswer: 0,
       userPoints: 0,
       currentQuestion: 1
-
-
     }
   },
   methods: {

@@ -2,7 +2,7 @@
   <div>
     <h1>Select a quiz:</h1>
     <div id="quizContainer">
-      <button  class="button1"  v-on:click ="startQuizOne">Who's that actor?</button>
+      <button  class="button1" v-on:click ="startQuizOne">Who's that actor?</button>
       <button class="button2" v-on:click="startQuizTwo">WHAT MOVIE?!</button>
     </div>
   </div>
