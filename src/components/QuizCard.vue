@@ -20,7 +20,7 @@
       {{ question.answer4 }}
     </button>
 
-    {{userPoints}}
+    {{ userPoints }}
   </div>
 
 </template>
@@ -57,12 +57,18 @@ export default {
     checkAnswer(userAnswer) {
 
       this.correctAnswer = this.question.correct_answer
-      if (userAnswer == this.correctAnswer){
+      if (userAnswer == this.correctAnswer) {
         this.userPoints++
       }
 
-      this.currentQuestion++
-      this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
+      if (this.currentQuestion < 5) {
+        this.currentQuestion++
+        this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
+      } else {
+
+        //quiz done code
+
+      }
     }
 
 
