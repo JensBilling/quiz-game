@@ -1,26 +1,32 @@
 <template>
   <div class="que-card">
-    <div>
-      {{ question.question }}
+    <div v-if="currentQuestion < 6">
+      <div>
+        {{ question.question }}
+      </div>
+
+      <img v-bind:src="question.image" alt=""/>
+
+
+      <button v-on:click="click1">
+        {{ question.answer1 }}
+      </button>
+      <button v-on:click="click2">
+        {{ question.answer2 }}
+      </button>
+      <button v-on:click="click3">
+        {{ question.answer3 }}
+      </button>
+      <button v-on:click="click4">
+        {{ question.answer4 }}
+      </button>
     </div>
 
-    <img v-bind:src="question.image" alt=""/>
-
-
-    <button v-on:click="click1">
-      {{ question.answer1 }}
-    </button>
-    <button v-on:click="click2">
-      {{ question.answer2 }}
-    </button>
-    <button v-on:click="click3">
-      {{ question.answer3 }}
-    </button>
-    <button v-on:click="click4">
-      {{ question.answer4 }}
-    </button>
-
-    {{ userPoints }}
+    <div v-else>
+      <div>
+        You got {{userPoints}} points. You are rad!
+      </div>
+    </div>
   </div>
 
 </template>
@@ -65,12 +71,22 @@ export default {
         this.currentQuestion++
         this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
       } else {
-
-        //quiz done code
-
+        this.currentQuestion = 6;
+        this.returnScoreToBackend()
       }
+    },
+    returnScoreToBackend() {
+      const jsonData = {'userId': this.userId, 'userScore': this.userPoints, 'quizId': this.question.quiz_id}
+      let options = {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+      }
+      fetch('http://127.0.0.1:3000/endgame', options)
     }
-
 
   }
 
