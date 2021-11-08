@@ -76,7 +76,9 @@ export default {
       }
     },
     returnScoreToBackend() {
-      const jsonData = {'userId': this.userId, 'userScore': this.userPoints, 'quizId': this.question.quiz_id}
+      let userId = localStorage.getItem('userId')
+
+      const jsonData = {'userId': userId, 'userScore': this.userPoints, 'quizId': this.question.quiz_id}
       let options = {
         method: 'POST',
         mode: 'cors',
