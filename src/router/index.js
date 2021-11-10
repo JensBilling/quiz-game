@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import CreateUser from "@/views/CreateUser";
 import Login from "@/views/Login";
 import QuizCard from "@/components/QuizCard";
+import Highscores from "../components/Highscores";
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
     component: QuizCard
 
   },
+  {
+    path: '/highscores',
+    name: 'highscores',
+    component: Highscores
+  }
 
 ]
 
