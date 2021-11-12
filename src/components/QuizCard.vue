@@ -6,21 +6,21 @@
         {{ question.question }}
       </div>
 
-      <img v-bind:src="question.image" alt=""/>
+      <div class="grid-container">
 
-
-      <button v-on:click="click1">
-        {{ question.answer1 }}
-      </button>
-      <button v-on:click="click2">
-        {{ question.answer2 }}
-      </button>
-      <button v-on:click="click3">
-        {{ question.answer3 }}
-      </button>
-      <button v-on:click="click4">
-        {{ question.answer4 }}
-      </button>
+        <button v-on:click="click1">
+          {{ question.answer1 }}
+        </button>
+        <button v-on:click="click2">
+          {{ question.answer2 }}
+        </button>
+        <button v-on:click="click3">
+          {{ question.answer3 }}
+        </button>
+        <button v-on:click="click4">
+          {{ question.answer4 }}
+        </button>
+      </div>
     </div>
 
     <div v-else>
@@ -104,18 +104,28 @@ export default {
 </script>
 
 <style scoped>
-.que-card.que-card {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-  align-items: center;
-  align-content: center;
-}
 
 
 #questionBlock {
+  font-size: 30px;
+  color: white;
+  text-shadow: 3px 3px 0 #000,
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.grid-container {
+margin: auto;
+ width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+
+
+}
+.endgame-points{
   font-size: 30px;
   color: white;
   text-shadow: 3px 3px 0 #000,
