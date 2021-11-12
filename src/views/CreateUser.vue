@@ -72,8 +72,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5em;
-  height: 2em;
+  width: 8em;
+  height: 3em;
   margin: 0.5em;
   border-radius: 5px;
   background-image: linear-gradient(to right, rgba(201, 28, 28, 0.35) 0%, #ffffff 100%);

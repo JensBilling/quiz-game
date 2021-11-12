@@ -1,7 +1,8 @@
 <template>
   <div class="que-card">
     <div v-if="currentQuestion < 6">
-      <div>
+      <img v-bind:src="question.image" alt=""/>
+      <div id="questionBlock">
         {{ question.question }}
       </div>
 
@@ -23,8 +24,13 @@
     </div>
 
     <div v-else>
-      <div>
-        You got {{userPoints}} points. You are rad!
+      <div class="endgame-points">
+        <div v-if="userPoints == 1">
+          You got {{ userPoints }} point.
+        </div>
+        <div v-else>
+        You got {{ userPoints }} points.
+        </div>
       </div>
     </div>
   </div>

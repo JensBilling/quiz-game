@@ -32,6 +32,7 @@ h1 {
   font-family: 'Merriweather', serif;
   font-size: 40px;
   font-weight: bold;
+  color: orange;
 }
 
 p {
@@ -39,7 +40,7 @@ p {
   line-height: 130%;
   padding: 5px;
 
-  color: black;
+  color: lightblue;
 }
 #app{
 display: grid;
