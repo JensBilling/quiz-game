@@ -19,9 +19,11 @@ export default {
 <style>
 /* Mobile first */
 body {
-  background-color: #bef3ff;
-  background-image: linear-gradient(to right, #5e99c7 0%, #90bbea 100%);
-  /background-image: url("./assets/curtains.jpg");
+  background: url("./assets/curtains.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin: 20px;
   font-family: 'monospace', Merriweather;
 }
@@ -50,6 +52,12 @@ grid-template-areas:
 "footer";
 grid-gap: 5px;
 text-align: center;
+}
+.navimg {
+  height: 60px;
+  float: left;
+  z-index: -1;
+  position: absolute;
 }
 
 

@@ -108,14 +108,14 @@ export default {
   align-content: center;
 }
 
-.que-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 
-}
-
-.que-link {
-  color: #2c3e50;
-  text-decoration: none;
+#questionBlock {
+  font-size: 30px;
+  color: white;
+  text-shadow: 3px 3px 0 #000,
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div class="navbar">
-    <router-link to="/">Home</router-link> |
+
+
+
+    <router-link to="/">Home</router-link>
+    |
     <router-link v-if="userId < 1" to="/createuser">Sign up</router-link>
     <router-link v-else to="/highscores">High-scores</router-link>
 
@@ -41,6 +45,7 @@ export default {
 
   font-weight: bolder;
 }
+
 
 
 </style>

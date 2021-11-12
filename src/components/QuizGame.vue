@@ -2,8 +2,8 @@
   <div>
     <h1>Select a quiz:</h1>
     <div id="quizContainer">
-      <button  class="button1"  v-on:click ="startQuizOne">Who's that actor?</button>
-      <button class="button2" v-on:click="startQuizTwo">WHAT MOVIE?!</button>
+      <button  class="button1"  v-on:click ="startQuizOne">MEGAQUIZ</button>
+      <button class="button2" v-on:click="startQuizTwo">SUPAQUIZ</button>
     </div>
   </div>
 </template>
@@ -66,10 +66,10 @@ button {
   margin-right: auto;
   margin-left: auto;
   border-radius: 5px;
-  background-image: linear-gradient(to right, #1c7ac9 0%, #71b5f1 100%);
+  background-image: linear-gradient(to right, rgba(201, 28, 28, 0.35) 0%, #ffffff 100%);
   background-size: 100%;
   font-size: 20px;
-  color: white;
+  color: #0a0a07;
   border: none;
   outline: none;
   cursor: pointer;

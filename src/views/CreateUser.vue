@@ -76,10 +76,10 @@ button {
   height: 2em;
   margin: 0.5em;
   border-radius: 5px;
-  background-image: linear-gradient(to right, #1c7ac9 0%, #71b5f1 100%);
+  background-image: linear-gradient(to right, rgba(201, 28, 28, 0.35) 0%, #ffffff 100%);
   background-size: 100%;
   font-size: 20px;
-  color: white;
+  color: #0a0a07;
   border: none;
   outline: none;
 }
