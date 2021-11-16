@@ -75,4 +75,9 @@ button {
   cursor: pointer;
   box-shadow: 3px 3px 5px black;
 }
+h1{
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
 </style>

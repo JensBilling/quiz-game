@@ -18,7 +18,7 @@
 
     <div v-else>
       <p>Welcome {{ username }}! Your total score is: {{ userScore }}</p>
-      <button v-on:click="logOutButton" class="logoutbutton" type="submit">Log out</button>
+
     </div>
   </div>
 </template>
@@ -71,17 +71,7 @@ export default {
 
           })
     },
-    logOutButton() {
-      this.userId = 0
-      this.username = ''
-      this.userPassword = ''
-      this.userScore = 0
-      this.loginUserResponse = ""
-      localStorage.setItem('userId', 0)
-      localStorage.setItem('username', "")
-      localStorage.setItem('userScore', 0)
-      location.reload();
-    }
+
   }
 }
 </script>
@@ -89,8 +79,12 @@ export default {
 <style>
 .login-form {
   display: inline-grid;
-  font-size: 27px;
+
   flex-direction: column;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+
 }
 
 p {

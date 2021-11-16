@@ -3,6 +3,7 @@
   <div id="app">
 
     <img class="navimg" src="./assets/logo-quiz-movie.png">
+
     <NavBar/>
     <router-view/>
   </div>
