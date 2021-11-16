@@ -2,7 +2,6 @@
   <div class="navbar">
 
 
-
     <router-link to="/">Home</router-link>
     |
     <router-link v-if="userId < 1" to="/createuser">Sign up</router-link>
@@ -50,16 +49,11 @@ export default {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
-  background-image: linear-gradient(to top, #286caf 0%, #258be1 100%);
   background-size: 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
   align-items: center;
   flex-direction: column;
   cursor: pointer;
   font-size: 20px;
-
   font-weight: bolder;
 }
 
@@ -89,7 +83,6 @@ a:hover {
   float: right;
   margin-top: -37px;
 }
-
 
 
 </style>

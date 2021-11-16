@@ -43,7 +43,7 @@ p {
   line-height: 130%;
   padding: 5px;
 
-  color: lightblue;
+  color: white;
 }
 #app{
 display: grid;

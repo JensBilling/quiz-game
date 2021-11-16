@@ -88,7 +88,12 @@ export default {
 }
 
 p {
-  font-size: 20px;
+  font-size: 30px;
+  font-family: "Comic Sans MS";
+  background: black;
+  padding: 15px;
+  width: 100%;
+  margin: auto;
 }
 
 button {

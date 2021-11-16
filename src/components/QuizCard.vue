@@ -29,10 +29,11 @@
           You got {{ userPoints }} point.
         </div>
         <div v-else>
-        You got {{ userPoints }} points.
+          You got {{ userPoints }} points.
         </div>
       </div>
     </div>
+    <div id="answerStatus"></div>
   </div>
 
 </template>
@@ -71,15 +72,24 @@ export default {
       this.correctAnswer = this.question.correct_answer
       if (userAnswer == this.correctAnswer) {
         this.userPoints++
+        document.querySelector("#answerStatus").style.background = "url(https://i.imgur.com/CdZXgD3.png)"
+      } else {
+        document.querySelector("#answerStatus").style.background = "url(https://i.imgur.com/rrQpV4o.png)"
       }
+
+      setTimeout(function () {
+        document.querySelector("#answerStatus").style.background = "none"
+      }, 1000)
 
       if (this.currentQuestion < 5) {
         this.currentQuestion++
         this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
       } else {
+
         this.currentQuestion = 6;
         this.returnScoreToBackend()
       }
+
     },
     returnScoreToBackend() {
       let userId = localStorage.getItem('userId')
@@ -117,15 +127,16 @@ export default {
 }
 
 .grid-container {
-margin: auto;
- width: 300px;
+  margin: auto;
+  width: 300px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 
 
 }
-.endgame-points{
+
+.endgame-points {
   font-size: 30px;
   color: white;
   text-shadow: 3px 3px 0 #000,
@@ -133,5 +144,12 @@ margin: auto;
   1px -1px 0 #000,
   -1px 1px 0 #000,
   1px 1px 0 #000;
+}
+
+#answerStatus {
+  width: 201px;
+  height: 201px;
+  background: none;
+  margin: auto;
 }
 </style>
