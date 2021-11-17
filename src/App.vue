@@ -35,14 +35,13 @@ h1 {
   font-family: 'Merriweather', serif;
   font-size: 40px;
   font-weight: bold;
-  color: orange;
+  color: white;
 }
 
 p {
   font-size: 16px;
   line-height: 130%;
   padding: 5px;
-
   color: white;
 }
 #app{

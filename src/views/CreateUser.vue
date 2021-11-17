@@ -83,4 +83,8 @@ button {
   border: none;
   outline: none;
 }
+
+label{
+  color: white;
+}
 </style>

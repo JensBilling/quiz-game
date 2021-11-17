@@ -17,7 +17,7 @@
     </div>
 
     <div v-else>
-      <p>Welcome {{ username }}! Your total score is: {{ userScore }}</p>
+      <p>Welcome {{ username }}!</p>
 
     </div>
   </div>
@@ -91,9 +91,10 @@ p {
   font-size: 30px;
   font-family: "Comic Sans MS";
   background: black;
-  padding: 15px;
-  width: 100%;
+  width: 600px;
+  padding: 0;
   margin: auto;
+  border-radius: 50px;
 }
 
 button {
