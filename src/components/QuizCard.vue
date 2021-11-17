@@ -79,7 +79,7 @@ export default {
 
       setTimeout(function () {
         document.querySelector("#answerStatus").style.background = "none"
-      }, 1000)
+      }, 1500)
 
       if (this.currentQuestion < 5) {
         this.currentQuestion++

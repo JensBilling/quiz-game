@@ -16,6 +16,7 @@ export default {
     }
   },
   methods: {
+
     fetchHighscores() {
       let scoreTableHtml = ""
       fetch('http://127.0.0.1:3000/highscores')
@@ -31,7 +32,12 @@ export default {
             console.log(data[0])
             console.log(data[1])
           })
+
     }
+
+  },
+  created: function () {
+    this.fetchHighscores()
   }
 
 }
