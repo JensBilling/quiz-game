@@ -1,7 +1,6 @@
 <template>
   <div>
 
-    <button v-on:click="fetchHighscores">test highscores bdb</button>
     <table id="scoreTable"></table>
 
   </div>
@@ -11,9 +10,7 @@
 export default {
   name: "Highscores",
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
 
@@ -41,8 +38,19 @@ export default {
   }
 
 }
+
 </script>
 
 <style scoped>
-
+#scoreTable {
+  margin: auto;
+  color: black;
+  background: #d8001d;
+  border: 5px solid black;
+  font-size: 25px;
+  padding: 10px;
+  text-align: left;
+  border-radius: 15px;
+  font-family: sans-serif;
+}
 </style>
