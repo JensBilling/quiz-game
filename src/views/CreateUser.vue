@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Create new account and Join us!</h1>
+    <h1>Create new account</h1>
     <form class="registration-form" @submit.prevent="createUserAndPost">
       <label for="username">
         Username:
