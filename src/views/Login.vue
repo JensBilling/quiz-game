@@ -110,4 +110,11 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 760px ) {
+  p{
+    font-size: 20px;
+  }
+}
+
 </style>

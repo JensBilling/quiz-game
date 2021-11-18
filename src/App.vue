@@ -62,6 +62,19 @@ text-align: center;
   z-index: -1;
   position: absolute;
 }
+@media only screen and (max-width: 760px ) {
+
+  .navimg {
+    height: 60px;
+    float: none;
+    z-index: 0;
+    position: static;
+    margin: auto;
+
+  }
+}
+
+
 
 
 

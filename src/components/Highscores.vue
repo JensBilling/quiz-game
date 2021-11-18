@@ -23,9 +23,7 @@ export default {
               scoreTableHtml += `<tr><td>${data[0][i]}<td>${data[1][i]}</td></tr>`
 
             }
-
             document.querySelector('#scoreTable').innerHTML = `<tr><td>Username:</td><td>Points:</td></tr>` + scoreTableHtml
-
             console.log(data[0])
             console.log(data[1])
           })

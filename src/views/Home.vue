@@ -3,7 +3,6 @@
     <Login></Login>
     <QuizGame v-if="userId > 0"></QuizGame>
 
-    <!--   <img alt="Vue logo" src="../assets/logo-quiz-movie.png"> -->
   </div>
 </template>
 

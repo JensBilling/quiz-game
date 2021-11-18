@@ -5,7 +5,6 @@
       <div id="questionBlock">
         {{ question.question }}
       </div>
-
       <div class="grid-container">
 
         <button v-on:click="click1">
@@ -152,4 +151,28 @@ export default {
   background: none;
   margin: auto;
 }
+
+button{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+  img{
+    max-width: 90%;
+  }
+
+  .grid-container {
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+}
+
 </style>
