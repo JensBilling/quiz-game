@@ -104,7 +104,6 @@ export default {
       }
       fetch('http://127.0.0.1:3000/endgame', options)
     }
-
   }
 
 }
@@ -150,16 +149,15 @@ export default {
   margin: auto;
 }
 
-button{
+button {
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
 
-
 @media only screen and (max-width: 760px) {
-  img{
+  img {
     max-width: 90%;
   }
 

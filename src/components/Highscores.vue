@@ -29,23 +29,21 @@ export default {
             for (let i = 0; i < data[0].length; i++) {
               scoreTableHtml += `<tr><td>${data[0][i]}<td>: ${data[1][i]}</td></tr>`
 
-              for (let i = 0; i < data.length; i++){
-                if (data[0][i].toLowerCase() == localStorage.getItem("username").toLowerCase()){
-                    localStorage.setItem("userScore", data[1][i])
-                }
+
+              if (data[0][i].toLowerCase() == localStorage.getItem("username").toLowerCase()) {
+                localStorage.setItem("userScore", data[1][i])
+
               }
+
             }
             document.querySelector('#scoreTable').innerHTML = `<tr><td>Username:</td><td>Points:</td></tr>` + scoreTableHtml
             console.log(data[0])
             console.log(data[1])
           })
-
     }
-
   },
   created: function () {
     this.fetchHighscores()
-
 
   }
 
@@ -66,7 +64,7 @@ export default {
   font-family: sans-serif;
 }
 
-.medalItem{
+.medalItem {
   margin-left: 2px;
   margin-right: 2px;
 }
