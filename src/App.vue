@@ -2,7 +2,7 @@
 
   <div id="app">
 
-    <img class="navimg" src="./assets/logo-quiz-movie.png">
+    <img class="navimg" src="./assets/logo-quiz-movie2.png">
 
     <NavBar/>
     <router-view/>
@@ -65,7 +65,9 @@ text-align: center;
 @media only screen and (max-width: 760px ) {
 
   .navimg {
-    height: 60px;
+    height: auto;
+    max-height: 165px;
+    width: 95%;
     float: none;
     z-index: 0;
     position: static;
