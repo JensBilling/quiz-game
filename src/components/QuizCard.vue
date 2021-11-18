@@ -127,12 +127,10 @@ export default {
 
 .grid-container {
   margin: auto;
-  width: 300px;
+  width: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
-
-
+  grid-gap: 10px;
 }
 
 .endgame-points {

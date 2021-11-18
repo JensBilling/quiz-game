@@ -20,7 +20,7 @@ export default {
           .then(response => response.json())
           .then(data => {
             for (let i = 0; i < data[0].length; i++) {
-              scoreTableHtml += `<tr><td>${data[0][i]}<td>${data[1][i]}</td></tr>`
+              scoreTableHtml += `<tr><td>${data[0][i]}<td>: ${data[1][i]}</td></tr>`
 
             }
             document.querySelector('#scoreTable').innerHTML = `<tr><td>Username:</td><td>Points:</td></tr>` + scoreTableHtml

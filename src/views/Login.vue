@@ -91,7 +91,7 @@ p {
   font-size: 30px;
   font-family: "Comic Sans MS";
   background: black;
-  width: 600px;
+  width: 80%;
   padding: 0;
   margin: auto;
   border-radius: 50px;
