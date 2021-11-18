@@ -2,8 +2,9 @@
   <div>
 
     <div id="medals">
-      <img v-if="userScore > 4" class="medalItem" src="https://i.imgur.com/ohLJbrW.png">
-      <img v-if="userScore > 9" class="medalItem" src="https://i.imgur.com/DJMeesL.png">
+      <img v-if="userScore > 4" class="medalItem" src="https://i.imgur.com/5m4l8KQ.png">
+      <img v-if="userScore > 9" class="medalItem" src="https://i.imgur.com/Cds3sTh.png">
+
     </div>
 
     <table id="scoreTable"></table>
@@ -29,10 +30,8 @@ export default {
             for (let i = 0; i < data[0].length; i++) {
               scoreTableHtml += `<tr><td>${data[0][i]}<td>: ${data[1][i]}</td></tr>`
 
-
               if (data[0][i].toLowerCase() == localStorage.getItem("username").toLowerCase()) {
                 localStorage.setItem("userScore", data[1][i])
-
               }
 
             }
