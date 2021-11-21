@@ -5,18 +5,28 @@
       <div id="questionBlock">
         {{ question.question }}
       </div>
+      <button v-if="clueUsed == 0" style="background-color: gray;
+                       width: 60px;
+                       height: 50px;
+                       margin: auto;
+                       margin-bottom: 5px;
+                       background-image: linear-gradient(to top, #333333 0%, lightgray 100%);
+                       background-size: 100%;"
+              v-on:click="use5050">
+        50/50
+      </button>
       <div class="grid-container">
 
-        <button v-on:click="click1">
+        <button v-if="showAnswer[0] == 0" v-on:click="click1">
           {{ question.answer1 }}
         </button>
-        <button v-on:click="click2">
+        <button v-if="showAnswer[1] == 0" v-on:click="click2">
           {{ question.answer2 }}
         </button>
-        <button v-on:click="click3">
+        <button v-if="showAnswer[2] == 0" v-on:click="click3">
           {{ question.answer3 }}
         </button>
-        <button v-on:click="click4">
+        <button v-if="showAnswer[3] == 0" v-on:click="click4">
           {{ question.answer4 }}
         </button>
       </div>
@@ -50,7 +60,9 @@ export default {
       question: JSON.parse(localStorage.getItem('question1')),
       correctAnswer: 0,
       userPoints: 0,
-      currentQuestion: 1
+      currentQuestion: 1,
+      clueUsed: 0,
+      showAnswer: [0, 0, 0, 0]
     }
   },
   methods: {
@@ -80,6 +92,8 @@ export default {
         document.querySelector("#answerStatus").style.background = "none"
       }, 1500)
 
+      this.showAnswer = [0, 0, 0, 0]
+
       if (this.currentQuestion < 5) {
         this.currentQuestion++
         this.question = JSON.parse(localStorage.getItem('question' + this.currentQuestion))
@@ -103,6 +117,24 @@ export default {
         body: JSON.stringify(jsonData)
       }
       fetch('http://127.0.0.1:3000/endgame', options)
+    },
+    use5050() {
+      this.correctAnswer = this.question.correct_answer
+      this.clueUsed++
+      let counter = 0
+      let randomNum = 0
+      let randomNumSave = 0
+      do {
+        randomNum = Math.floor(Math.random() * 4) + 1
+        if (randomNum != this.correctAnswer && randomNum != randomNumSave){
+          randomNumSave = randomNum
+          this.showAnswer[randomNum-1]++
+          counter++
+
+        }
+      } while (counter < 2)
+
+
     }
   }
 
@@ -126,6 +158,7 @@ export default {
 
 .grid-container {
   margin: auto;
+  margin-top: 5px;
   width: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
