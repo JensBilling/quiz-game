@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div id="answerStatus"></div>
+    <img id="answerStatus" src="">
   </div>
 
 </template>
@@ -83,13 +83,15 @@ export default {
       this.correctAnswer = this.question.correct_answer
       if (userAnswer == this.correctAnswer) {
         this.userPoints++
-        document.querySelector("#answerStatus").style.background = "url(https://i.imgur.com/CdZXgD3.png)"
+        document.querySelector("#answerStatus").style.display = "block"
+        document.querySelector("#answerStatus").src="https://i.imgur.com/CdZXgD3.png"
       } else {
-        document.querySelector("#answerStatus").style.background = "url(https://i.imgur.com/rrQpV4o.png)"
+        document.querySelector("#answerStatus").style.display = "block"
+        document.querySelector("#answerStatus").src="https://i.imgur.com/rrQpV4o.png"
       }
 
       setTimeout(function () {
-        document.querySelector("#answerStatus").style.background = "none"
+        document.querySelector("#answerStatus").style.display = "none"
       }, 1500)
 
       this.showAnswer = [0, 0, 0, 0]
@@ -176,9 +178,9 @@ export default {
 }
 
 #answerStatus {
+  display: none;
   width: 201px;
   height: 201px;
-  background: none;
   margin: auto;
 }
 
@@ -202,6 +204,13 @@ button {
     grid-gap: 10px;
   }
 
+  #answerStatus {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 5px;
+  }
 }
 
 </style>
