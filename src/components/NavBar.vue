@@ -85,7 +85,6 @@ a:hover {
 }
 @media only screen and (max-width: 760px ) {
   .logoutbutton{
-    display:none;
     float: none;
     margin-top: 10px;
     width: 150px;
